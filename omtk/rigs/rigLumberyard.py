@@ -95,6 +95,10 @@ class LumberyardSceneRoot(classRig.RigGrp):
         super(LumberyardSceneRoot, self).unbuild()
 
 class RigLumberyard(classRig.Rig):
+    """
+    Custom rig implementation in respect to lumberyard engine.
+    """
+
     DEFAULT_UPP_AXIS = constants.Axis.z
     LEGACY_ARM_IK_CTRL_ORIENTATION = True
     LEGACY_LEG_IK_CTRL_ORIENTATION = True
@@ -116,7 +120,7 @@ class RigLumberyard(classRig.Rig):
 
         :return:
         """
-        super(RigLumberyard, self).pre_build(create_master_grp=True)
+        super(RigLumberyard, self).pre_build(create_master_grp=True, create_layer_jnt=True)
 
         #
         # Create specific group related to squeeze rig convention
